@@ -19,6 +19,7 @@ package fr.nicolasgille.chessmaster.piece;
 import fr.nicolasgille.chessmaster.board.ICell;
 
 /**
+ * Interface used to specified if a piece can be moveable or not.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
@@ -33,6 +34,8 @@ public interface Moveable {
      *  The cell where the piece would move.
      * @return
      *  A boolean to indicate if the piece can be moved or not in the new Cell.
+     * @since 1.0
+     * @version 1.0
      */
     boolean isMoveable(ICell cell);
 

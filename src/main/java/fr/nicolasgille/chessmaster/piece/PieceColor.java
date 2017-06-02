@@ -17,30 +17,16 @@
 package fr.nicolasgille.chessmaster.piece;
 
 /**
- * Interface at applied on a AbstractPiece to indicate the piece can be catch by another pieces.
+ * An enum used to represent the color of the piece.
+ *
+ * A piece can be Black or White, so it can be possible to add many other color if you would extends
+ * the project to add another game board with some new color type.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
  * @version 1.0
  */
-public interface Catchable {
-
-    /**
-     * Check if a piece can catchable by another piece.
-     *
-     * @return
-     *  True if the piece passed on parameter can be catch by the current piece.
-     *  False in other case.
-     * @since 1.0
-     * @version 1.0
-     */
-    boolean isCatch();
-
-    /**
-     * Catch the object and remove it from the list of playable object.
-     *
-     * @since 1.0
-     * @version 1.0
-     */
-    void catchObject();
+public enum PieceColor {
+    WHITE,
+    BLACK;
 }

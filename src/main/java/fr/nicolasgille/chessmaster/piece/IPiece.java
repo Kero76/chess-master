@@ -23,4 +23,64 @@ package fr.nicolasgille.chessmaster.piece;
  * @version 1.0
  */
 public interface IPiece {
+
+    /**
+     * Return the abscissa of the current piece.
+     *
+     * @return
+     *  The abscissa of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    int getX();
+
+    /**
+     * Set the abscissa of the current piece.
+     *
+     * @param x
+     *  New abscissa of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    void setX(int x);
+
+    /**
+     * Return the ordinate of the piece.
+     *
+     * @return
+     *  The ordinate of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    int getY();
+
+    /**
+     * Set the ordinate of the current piece.
+     *
+     * @param y
+     *  New ordinate of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    void setY(int y);
+
+    /**
+     * Return the color of the piece.
+     *
+     * @return
+     *  The color of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    PieceColor getColor();
+
+    /**
+     * Set the color of the piece.
+     *
+     * @param color
+     *  New color of the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    void setColor(PieceColor color);
 }

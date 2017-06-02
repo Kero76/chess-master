@@ -54,7 +54,7 @@ public interface ICell {
      * Return the ordinate of the cell.
      *
      * @return
-     *  The ordinate of the cell.7
+     *  The ordinate of the cell.
      * @since 1.0
      * @version 1.0
      */
