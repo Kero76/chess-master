@@ -16,6 +16,8 @@
  */
 package fr.nicolasgille.chessmaster.piece;
 
+import fr.nicolasgille.chessmaster.board.ICell;
+
 /**
  *
  * @author Nicolas GILLE
@@ -151,5 +153,19 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
      */
     public void catchObject() {
         this.isCatch = true;
+    }
+
+    /**
+     * Move the piece on <em>cell</em>.
+     *
+     * @param cell Arrival cell of the piece.
+     *
+     * @version 1.0
+     * @since 1.0
+     */
+    @Override
+    public void move(ICell cell) {
+        this.setX(cell.getX());
+        this.setY(cell.getY());
     }
 }

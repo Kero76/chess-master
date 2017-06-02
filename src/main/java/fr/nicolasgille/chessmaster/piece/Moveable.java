@@ -40,7 +40,7 @@ public interface Moveable {
     boolean isMoveable(ICell cell);
 
     /**
-     * Move the piece on <em>cell</em> only if the move is available.
+     * Move the piece on <em>cell</em>.
      *
      * @param cell
      *  Arrival cell of the piece.
