@@ -19,6 +19,7 @@ package fr.nicolasgille.chessmaster.piece.chesspieces;
 import fr.nicolasgille.chessmaster.board.ChessBoard;
 import fr.nicolasgille.chessmaster.board.ICell;
 import fr.nicolasgille.chessmaster.piece.AbstractPiece;
+import fr.nicolasgille.chessmaster.piece.IPiece;
 import fr.nicolasgille.chessmaster.piece.PieceColor;
 
 /**
