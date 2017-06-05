@@ -22,6 +22,7 @@ import fr.nicolasgille.chessmaster.piece.AbstractPiece;
 import fr.nicolasgille.chessmaster.piece.PieceColor;
 
 /**
+ * Representation of a Rook in the chess.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
