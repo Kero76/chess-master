@@ -60,12 +60,17 @@ public class Rook extends AbstractPiece {
      */
     @Override
     public boolean isMoveable(ICell cell) {
+        // If abscissa and ordinate are different is same time, movement not valid.
+        if (this.getX() != cell.getX() && this.getY() != cell.getY()) {
+            return false;
+        }
+
         // If abscissa is the same as cell.
         if (this.getX() == cell.getX()) {
             // If the ordinate of the piece is superior at the cell, the rook move to the bottom.
             if (this.getY() > cell.getY()) {
                 // Check each cell to see if is occupied and return false if the cell is occupied.
-                for (int y = this.getY() - 1; y > cell.getY(); y--) {
+                for (int y = this.getY() - 1; y > cell.getY(); --y) {
                     if (ChessBoard.getInstance().getCell(this.getX(), y).isOccupied()) {
                         return false;
                     }
@@ -74,7 +79,7 @@ public class Rook extends AbstractPiece {
             // If the ordinate of the piece is inferior at the cell, the rook move to the bottom.
             else {
                 // Check each cell to see if is occupied and return false if the cell is occupied.
-                for (int y = this.getY() + 1; y < cell.getY(); y++) {
+                for (int y = this.getY() + 1; y < cell.getY(); ++y) {
                     if (ChessBoard.getInstance().getCell(this.getX(), y).isOccupied()) {
                         return false;
                     }
@@ -87,7 +92,7 @@ public class Rook extends AbstractPiece {
             // If the abscissa of the piece is superior at the cell, the rook move to the bottom.
             if (this.getX() > cell.getX()) {
                 // Check each cell to see if is occupied and return false if the cell is occupied.
-                for (int x = this.getX() - 1; x > cell.getX(); x--) {
+                for (int x = this.getX() - 1; x > cell.getX(); --x) {
                     if (ChessBoard.getInstance().getCell(x, this.getY()).isOccupied()) {
                         return false;
                     }
@@ -96,7 +101,7 @@ public class Rook extends AbstractPiece {
             // If the abscissa of the piece is inferior at the cell, the rook move to the bottom.
             else {
                 // Check each cell to see if is occupied and return false if the cell is occupied.
-                for (int x = this.getX() + 1; x < cell.getX(); x++) {
+                for (int x = this.getX() + 1; x < cell.getX(); ++x) {
                     if (ChessBoard.getInstance().getCell(x, this.getY()).isOccupied()) {
                         return false;
                     }
@@ -104,10 +109,7 @@ public class Rook extends AbstractPiece {
             }
         }
 
-        // if cell is occupied and the color is different, the movement is possible.
-        if (cell.isOccupied() && cell.getPiece().getColor() != this.getColor()) {
-            return true;
-        }
-        return true;
+        // if cell is occupied and the color is different or cell is free, the movement is possible.
+        return (!cell.isOccupied() || (cell.isOccupied() && cell.getPiece().getColor() != this.getColor()));
     }
 }

@@ -16,12 +16,12 @@
  */
 package fr.nicolasgille.chessmaster.piece.chesspieces;
 
-import fr.nicolasgille.chessmaster.board.ChessBoard;
 import fr.nicolasgille.chessmaster.board.ICell;
 import fr.nicolasgille.chessmaster.piece.AbstractPiece;
 import fr.nicolasgille.chessmaster.piece.PieceColor;
 
 /**
+ * Representation of a Knight in the chess.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1

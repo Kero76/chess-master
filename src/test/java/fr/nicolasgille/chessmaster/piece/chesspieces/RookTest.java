@@ -50,7 +50,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isTrue();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isTrue();
     }
 
     @Test
@@ -63,7 +63,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isTrue();
+        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isFalse();
     }
 
     @Test
@@ -76,7 +76,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isTrue();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isTrue();
     }
 
     @Test
@@ -90,7 +90,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isFalse();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isFalse();
     }
 
     @Test
@@ -104,7 +104,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isFalse();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isFalse();
     }
 
     @Test
@@ -118,7 +118,7 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isTrue();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isTrue();
     }
 
     @Test
@@ -132,6 +132,6 @@ public class RookTest {
         Rook piece = (Rook) ChessBoard.getInstance().getCell(0, 0).getPiece();
 
         // Then - Compare if the movement is possible.
-        assertThat(piece.isMoveable(new Cell(xToGo, yToGo))).isTrue();
+        assertThat(piece.isMoveable(ChessBoard.getInstance().getCell(xToGo, yToGo))).isFalse();
     }
 }

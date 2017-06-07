@@ -24,6 +24,7 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
+ * Unit test for Bishop piece.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
