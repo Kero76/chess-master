@@ -103,6 +103,8 @@ public class ChessBoard implements IBoard {
      *
      * @return
      *  The unique instance of ChessBoard.
+     * @since 1.0
+     * @version 1.0
      */
     public static ChessBoard getInstance() {
         if (ChessBoard.instance == null) {
@@ -116,8 +118,8 @@ public class ChessBoard implements IBoard {
      *
      * @return The width of the board.
      *
-     * @version 1.0
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public int getX() {
@@ -129,8 +131,8 @@ public class ChessBoard implements IBoard {
      *
      * @param x New width for the board.
      *
-     * @version 1.0
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public void setX(int x) {
@@ -142,8 +144,8 @@ public class ChessBoard implements IBoard {
      *
      * @return The height of the board.
      *
-     * @version 1.0
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public int getY() {
@@ -155,8 +157,8 @@ public class ChessBoard implements IBoard {
      *
      * @param y New height of the board.
      *
-     * @version 1.0
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public void setY(int y) {
@@ -168,14 +170,13 @@ public class ChessBoard implements IBoard {
      *
      * @param x The abscissa of the cell at get.
      * @param y The coordinate of the cell at get.
-     *
      * @return The cell present on x/y.
      *
      * @throws IllegalArgumentException
      *  Argument passed on parameter are not between right value.
      *
-     * @version 1.0
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public ICell getCell(int x, int y) throws IllegalArgumentException {

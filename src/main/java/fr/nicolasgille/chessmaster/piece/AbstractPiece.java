@@ -19,6 +19,9 @@ package fr.nicolasgille.chessmaster.piece;
 import fr.nicolasgille.chessmaster.board.ICell;
 
 /**
+ * Abstract class used to implements same methods from each subclass of piece.
+ *
+ * You can inherit this class to create your own piece type, for another game.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
@@ -45,7 +48,6 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
      *
      * @see PieceColor
      * @since 1.0
-     * @version 1.0
      */
     protected PieceColor color;
 

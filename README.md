@@ -16,11 +16,11 @@ You can get the rules of the Chess directly on Wikipedia :
 ### Pieces of Chess 
 You can see the pieces ready to play.
 - [x] Pawn
-- [ ] Rook
-- [ ] Bishop
-- [ ] Knight
-- [ ] Queen
-- [ ] King
+- [x] Rook
+- [x] Bishop
+- [x] Knight
+- [x] Queen
+- [x] King
 
 ## License
 Chess Master is under GPLv3 license.
