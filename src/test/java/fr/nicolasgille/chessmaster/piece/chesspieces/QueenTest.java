@@ -16,7 +16,6 @@
  */
 package fr.nicolasgille.chessmaster.piece.chesspieces;
 
-import fr.nicolasgille.chessmaster.board.Cell;
 import fr.nicolasgille.chessmaster.board.ChessBoard;
 import fr.nicolasgille.chessmaster.piece.PieceColor;
 import org.junit.Before;
