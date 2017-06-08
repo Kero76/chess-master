@@ -25,22 +25,4 @@ package fr.nicolasgille.chessmaster.piece;
  */
 public interface Catchable {
 
-    /**
-     * Check if a piece can catchable by another piece.
-     *
-     * @return
-     *  True if the piece passed on parameter can be catch by the current piece.
-     *  False in other case.
-     * @since 1.0
-     * @version 1.0
-     */
-    boolean isCatch();
-
-    /**
-     * Catch the object and remove it from the list of playable object.
-     *
-     * @since 1.0
-     * @version 1.0
-     */
-    void catchObject();
 }

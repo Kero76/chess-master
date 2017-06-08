@@ -53,7 +53,6 @@ public class Pawn extends AbstractPiece {
         this.x = x;
         this.y = y;
         this.color = color;
-        this.isCatch = false;
     }
 
     /**
@@ -82,52 +81,36 @@ public class Pawn extends AbstractPiece {
      */
     @Override
     public boolean isMoveable(ICell cell) {
-        // If Abscissa is the same (this.getX == cell.getX), so pawn moves forward.
-        if (this.getX() == cell.getX()) {
-            // If the pawn try to move from twice cells,
-            // it check previously if he don't move, and the arrival cell is at Y +/- 2
-            if (!this.hasMoved() && this.getY() == cell.getY() + 2 || this.getY() == cell.getY() - 2) {
-                // Moved on top of the chessboard.
+        // If movement length equal 2, the pawn can try to catch another piece, or moved two cells from initial cell.
+        if (Math.abs(cell.getX() - this.getX()) + Math.abs(cell.getY() - this.getY()) == 2) {
+            // Pawn moved from initial cell.
+            if (!this.hasMoved() && this.getX() == cell.getX()) {
+                // Moved on top and check the way of the piece. Same work for bottom way.
                 if (this.getY() == cell.getY() + 2) {
-                    if (!ChessBoard.getInstance().getCell(this.getX() + 1, this.getY() + 1).isOccupied() && !cell.isOccupied()) {
-                        return true;
-                    }
-                }
-                // Moved on the bottom of the chessboard.
-                else {
-                    if (!ChessBoard.getInstance().getCell(this.getX() - 1, this.getY() - 1).isOccupied() && !cell.isOccupied()) {
-                        return true;
-                    }
+                    return !ChessBoard.getInstance().getCell(this.getX() - 1, this.getY() - 1).isOccupied() && !cell.isOccupied();
+                } else {
+                    return !ChessBoard.getInstance().getCell(this.getX() + 1, this.getY() + 1).isOccupied() && !cell.isOccupied();
                 }
             }
 
-            // Then, if pawn try to move once,
-            // it check if the cell forward is free and the movement is to 1 cell.
-            if (!cell.isOccupied() && this.getY() + 1 == cell.getY() || this.getY() - 1 == cell.getY()) {
-                return true;
+            // Pawn try to catch piece from diagonal cell.
+            if (cell.getY() != this.getY() && cell.getX() != this.getX()) {
+                return cell.isOccupied() && cell.getPiece().getColor() != this.getColor();
             }
         }
 
-        // If Abscissa of the pawn is cell.getX +/- 1, so the pawn try to catch a piece.
-        if (cell.getX() == this.getX() + 1 || cell.getX() == this.getX() - 1) {
-            // Then, it check if the cell forward is occupied and the movement is to 1 cell.
-            if (cell.isOccupied() && this.getY() + 1 == cell.getY() || this.getY() - 1 == cell.getY()) {
-                // If the color of the piece on cell is different to the current color of the piece.
-                if (cell.getPiece().getColor() != this.getColor()) {
-                    return true;
-                }
-            }
+        // If movement length equal 1, the pawn move on forward/backward of the current position.
+        if (Math.abs(cell.getX() - this.getX()) + Math.abs(cell.getY() - this.getY()) == 1) {
+            return !cell.isOccupied();
         }
-
-        // In other case, the movement not authorized.
         return false;
     }
 
     /**
      * Move the piece on <em>cell</em>.
      *
-     * @param cell Arrival cell of the piece.
-     *
+     * @param cell
+     *  Arrival cell of the piece.
      * @version 1.0
      * @since 1.0
      */

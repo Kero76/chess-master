@@ -50,19 +50,16 @@ public class Knight extends AbstractPiece {
     /**
      * Check if a piece can be moved in another cell of the board.
      *
-     * @param cell The cell where the piece would move.
-     *
-     * @return A boolean to indicate if the piece can be moved or not in the new Cell.
-     *
-     * @version 1.0
+     * @param cell
+     *  The cell where the piece would move.
+     * @return
+     *  A boolean to indicate if the piece can be moved or not in the new Cell.
      * @since 1.0
+     * @version 1.0
      */
     @Override
     public boolean isMoveable(ICell cell) {
-        // Compute the length of the movement and if is equal 3,
-        // and the cell is free, or occupied by a piece who have other color of this, movement can be accepted.
-        return (Math.abs(cell.getY() - this.getY()) + Math.abs(cell.getX() - this.getX()) == 3 &&
-                (!cell.isOccupied() || (cell.isOccupied() && cell.getPiece().getColor() != this.getColor())));
-
+        // Compute the length of the movement and if is equal 3 and call method checkArrivalCell(cell)
+        return (Math.abs(cell.getY() - this.getY()) + Math.abs(cell.getX() - this.getX()) == 3 && super.checkArrivalCell(cell));
     }
 }

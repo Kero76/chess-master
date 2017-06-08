@@ -33,7 +33,7 @@ public interface Moveable {
      * @param cell
      *  The cell where the piece would move.
      * @return
-     *  A boolean to indicate if the piece can be moved or not in the new Cell.
+     *  A boolean to indicate if the piece can be moved or not in the specific cell.
      * @since 1.0
      * @version 1.0
      */

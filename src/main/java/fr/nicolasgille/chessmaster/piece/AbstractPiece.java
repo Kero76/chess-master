@@ -41,13 +41,6 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
     protected int y;
 
     /**
-     * Indicate if the piece is catch or already present on the board.
-     *
-     * @since 1.0
-     */
-    protected boolean isCatch;
-
-    /**
      * Indicate the color of the piece.
      *
      * @see PieceColor
@@ -133,29 +126,6 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
     }
 
     /**
-     * Check if a piece can catchable by another piece.
-     *
-     * @return
-     *  True if the piece passed on parameter can be catch by the current piece.
-     *  False in other case.
-     * @since 1.0
-     * @version 1.0
-     */
-    public boolean isCatch() {
-        return this.isCatch;
-    }
-
-    /**
-     * change the state of the piece as <em>catch</em>.
-     *
-     * @since 1.0
-     * @version 1.0
-     */
-    public void catchObject() {
-        this.isCatch = true;
-    }
-
-    /**
      * Move the piece on <em>cell</em>.
      *
      * @param cell Arrival cell of the piece.
@@ -167,5 +137,23 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
     public void move(ICell cell) {
         this.setX(cell.getX());
         this.setY(cell.getY());
+    }
+
+    /**
+     * Check the cell of arrival of a movement.
+     *
+     * To check if the movement can be possible and valid.
+     * It check if the cell is free, or if the cell is occupied and the color of the piece is different from this.
+     * In that case, it return <code>true</code>. Otherwise, the method return <code>false</code>.
+     *
+     * @param cell
+     *  Cell where the king try to move.
+     * @return
+     *  True if the movement can be accepted, false in other case.
+     * @since 1.0
+     * @version 1.0
+     */
+    protected boolean checkArrivalCell(ICell cell) {
+        return (!cell.isOccupied() || (cell.isOccupied() && cell.getPiece().getColor() != this.getColor()));
     }
 }
