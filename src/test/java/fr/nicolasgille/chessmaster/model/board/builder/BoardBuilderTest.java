@@ -14,11 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board.builder;
+package fr.nicolasgille.chessmaster.model.board.builder;
 
-import fr.nicolasgille.chessmaster.board.ChessBoard;
-import fr.nicolasgille.chessmaster.piece.PieceColor;
-import fr.nicolasgille.chessmaster.piece.chesspieces.*;
+import fr.nicolasgille.chessmaster.model.board.ChessBoard;
+import fr.nicolasgille.chessmaster.model.piece.chesspieces.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -54,35 +53,49 @@ public class BoardBuilderTest {
 
         // Then - Check position of the piece on ChessBoard.
         // Pawn checker.
-        for (int x = 0; x < ChessBoard.getInstance().getX(); ++x) {
-            assertThat(ChessBoard.getInstance().getCell(x, 1).getPiece()).isInstanceOf(Pawn.class);
-            assertThat(ChessBoard.getInstance().getCell(x, ChessBoard.getInstance().getY() - 2).getPiece()).isInstanceOf(Pawn.class);
+        for (int y= 0; y < ChessBoard.getInstance().getY(); ++y) {
+            assertThat(ChessBoard.getInstance().getCell(1, y).getPiece()).isInstanceOf(Pawn.class);
+            assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 2, y).getPiece()).isInstanceOf(Pawn.class);
         }
+
+        // Display ChessBoard.
+        System.out.println(ChessBoard.getInstance().toString());
 
         // Rook Checker
         assertThat(ChessBoard.getInstance().getCell(0, 0).getPiece()).isInstanceOf(Rook.class);
-        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, 0).getPiece()).isInstanceOf(Rook.class);
-        assertThat(ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Rook.class);
+        assertThat(ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 1).getPiece()).isInstanceOf(Rook.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 0).getPiece()).isInstanceOf(Rook.class);
         assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Rook.class);
 
         // Knight Checker
-        assertThat(ChessBoard.getInstance().getCell(1, 0).getPiece()).isInstanceOf(Knight.class);
-        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 2, 0).getPiece()).isInstanceOf(Knight.class);
-        assertThat(ChessBoard.getInstance().getCell(1, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Knight.class);
-        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 2, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Knight.class);
+        assertThat(ChessBoard.getInstance().getCell(0, 1).getPiece()).isInstanceOf(Knight.class);
+        assertThat(ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 2).getPiece()).isInstanceOf(Knight.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 1).getPiece()).isInstanceOf(Knight.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 2).getPiece()).isInstanceOf(Knight.class);
 
         // Bishop Checker
-        assertThat(ChessBoard.getInstance().getCell(2,0).getPiece()).isInstanceOf(Bishop.class);
-        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 3, 0).getPiece()).isInstanceOf(Bishop.class);
-        assertThat(ChessBoard.getInstance().getCell(2, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Bishop.class);
-        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 3, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Bishop.class);
+        assertThat(ChessBoard.getInstance().getCell(0,2).getPiece()).isInstanceOf(Bishop.class);
+        assertThat(ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 3).getPiece()).isInstanceOf(Bishop.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 2).getPiece()).isInstanceOf(Bishop.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 3).getPiece()).isInstanceOf(Bishop.class);
 
         // Queen Checker
-        assertThat(ChessBoard.getInstance().getCell(3, 0).getPiece()).isInstanceOf(Queen.class);
-        assertThat(ChessBoard.getInstance().getCell(3, ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(Queen.class);
+        assertThat(ChessBoard.getInstance().getCell(0, 3).getPiece()).isInstanceOf(Queen.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 3).getPiece()).isInstanceOf(Queen.class);
 
         // King Checker
-        assertThat(ChessBoard.getInstance().getCell(4, 0).getPiece()).isInstanceOf(King.class);
-        assertThat(ChessBoard.getInstance().getCell(4,ChessBoard.getInstance().getY() - 1).getPiece()).isInstanceOf(King.class);
+        assertThat(ChessBoard.getInstance().getCell(0, 4).getPiece()).isInstanceOf(King.class);
+        assertThat(ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 4).getPiece()).isInstanceOf(King.class);
+    }
+
+    @Test
+    public void testRideToTheEndBuilder() {
+        // Given - @see setUp.
+
+        // When - Instantiate chess board.
+        this.boardBuilder.buildRideToTheEndBoard();
+
+        // Then - display chessboard
+        System.out.println(ChessBoard.getInstance().toString());
     }
 }

@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board;
+package fr.nicolasgille.chessmaster.model.board;
 
-import fr.nicolasgille.chessmaster.piece.IPiece;
+import fr.nicolasgille.chessmaster.model.piece.IPiece;
 
 /**
  * Implement of <code>ICell</code> interface for the <code>ChessBoard</code>.

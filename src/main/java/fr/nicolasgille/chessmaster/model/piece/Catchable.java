@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.piece;
+package fr.nicolasgille.chessmaster.model.piece;
 
 /**
  * Interface at applied on a AbstractPiece to indicate the piece can be catch by another pieces.

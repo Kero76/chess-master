@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board;
+package fr.nicolasgille.chessmaster.model.board;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -191,5 +191,42 @@ public class ChessBoard implements IBoard {
         }
 
         return this.boards.get(x + "" + y);
+    }
+
+    /**
+     * Display the chess board in ASCII format.
+     *
+     * @return
+     *  A representation of the chess board in ASCII format.
+     * @since 1.0
+     * @version 1.0
+     */
+    @Override
+    public String toString() {
+        // Generate a line like this : +---+--- ...
+        StringBuilder lineSeparator = new StringBuilder();
+        for (int i = 0; i < this.getX(); ++i) {
+            lineSeparator.append("+---");
+        }
+        lineSeparator.append("+");
+
+        // Build chessboard.
+        StringBuilder str = new StringBuilder();
+        for (int x = 0; x < this.getX(); ++x) {
+            str.append(lineSeparator.toString()).append(System.getProperty("line.separator"));
+            for (int y = 0; y < this.getY(); ++y) {
+                str.append("| ");
+                // If cell is occupied, get the symbol of the piece or display an empty cell.
+                if (this.getCell(x, y).isOccupied()) {
+                    str.append(this.getCell(x, y).getPiece().getSymbol()).append(" ");
+                } else {
+                    str.append("  ");
+                }
+            }
+            str.append("|").append(System.getProperty("line.separator"));
+        }
+        str.append(lineSeparator.toString());
+
+        return str.toString();
     }
 }

@@ -16,6 +16,9 @@
  */
 package fr.nicolasgille.chessmaster;
 
+import fr.nicolasgille.chessmaster.gui.View;
+import javafx.application.Application;
+
 /**
  *
  * @author Nicolas GILLE
@@ -23,7 +26,16 @@ package fr.nicolasgille.chessmaster;
  * @version 1.0
  */
 public class App {
-    public static void main(String[] args) {
 
+    /**
+     * Entry point of the application used to start the gui.
+     *
+     * @param args
+     *  Arguments receive when the application was running.
+     * @since 1.0
+     * @version 1.0
+     */
+    public static void main(String[] args) {
+        Application.launch(View.class, args);
     }
 }

@@ -14,38 +14,49 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.model.piece;
-
-import fr.nicolasgille.chessmaster.model.board.ICell;
+package fr.nicolasgille.chessmaster.model.piece.chesspieces;
 
 /**
- * Interface used to specified if a piece can be moveable or not.
+ * An enum used to represent the piece of chess when you save a party, reload a game, ...
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
  * @version 1.0
  */
-public interface Moveable {
+public enum ChessSymbol {
+    KING('K'),
+    QUEEN('Q'),
+    KNIGHT('N'),
+    BISHOP('B'),
+    ROOK('R'),
+    PAWN('P');
 
     /**
-     * Check if a piece can be moved in another cell of the board.
+     * Representation of a chess piece.
+     */
+    private char symbol;
+
+    /**
+     * Constructor of the enum object.
      *
-     * @param cell
-     *  The cell where the piece would move.
+     * @param symbol
+     *  Symbol used to represent the piece.
+     * @since 1.0
+     * @version 1.0
+     */
+    ChessSymbol(char symbol) {
+        this.symbol = symbol;
+    }
+
+    /**
+     * Return the symbol for each piece of chess.
+     *
      * @return
-     *  A boolean to indicate if the piece can be moved or not in the specific cell.
+     *  Symbol used to represent the piece.
      * @since 1.0
      * @version 1.0
      */
-    boolean isMoveable(ICell cell);
-
-    /**
-     * Move the piece on <em>cell</em>.
-     *
-     * @param cell
-     *  Arrival cell of the piece.
-     * @since 1.0
-     * @version 1.0
-     */
-    void move(ICell cell);
+    public char getSymbol() {
+        return this.symbol;
+    }
 }

@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.piece.chesspieces;
+package fr.nicolasgille.chessmaster.model.piece.chesspieces;
 
-import fr.nicolasgille.chessmaster.board.ChessBoard;
-import fr.nicolasgille.chessmaster.board.ICell;
-import fr.nicolasgille.chessmaster.piece.AbstractPiece;
-import fr.nicolasgille.chessmaster.piece.PieceColor;
+import fr.nicolasgille.chessmaster.model.board.ChessBoard;
+import fr.nicolasgille.chessmaster.model.board.ICell;
+import fr.nicolasgille.chessmaster.model.piece.AbstractPiece;
+import fr.nicolasgille.chessmaster.model.piece.PieceColor;
 
 /**
  * Representation of a Rook in the chess.
@@ -46,6 +46,7 @@ public class Rook extends AbstractPiece {
         this.x = x;
         this.y = y;
         this.color = color;
+        this.symbol = ChessSymbol.ROOK.getSymbol();
     }
 
     /**

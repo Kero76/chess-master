@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board.builder;
+package fr.nicolasgille.chessmaster.model.board.builder;
 
 /**
  * This class is used to build a <code>Board</code> for different type of game.
@@ -35,5 +35,17 @@ public class BoardBuilder {
      */
     public ChessBoardBuilder buildChessBoard() {
         return new ChessBoardBuilder();
+    }
+
+    /**
+     * Instantiate a chess board with all pieces needed to play at Ride to the End.
+     *
+     * @return
+     *  A chess board completely instantiate.
+     * @since 1.0
+     * @version 1.0
+     */
+    public RideToTheEndBoard buildRideToTheEndBoard() {
+        return new RideToTheEndBoard();
     }
 }

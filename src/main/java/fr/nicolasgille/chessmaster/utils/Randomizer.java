@@ -14,38 +14,33 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.model.piece;
+package fr.nicolasgille.chessmaster.utils;
 
-import fr.nicolasgille.chessmaster.model.board.ICell;
+import java.util.Random;
 
 /**
- * Interface used to specified if a piece can be moveable or not.
+ * Util class used to generate random number with different parameter.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
  * @version 1.0
  */
-public interface Moveable {
+public class Randomizer {
 
     /**
-     * Check if a piece can be moved in another cell of the board.
+     * Return a value between min and max value.
      *
-     * @param cell
-     *  The cell where the piece would move.
+     * @param min
+     *  Value minimal for the randomize.
+     * @param max
+     *  Value maximal for the randomize.
      * @return
-     *  A boolean to indicate if the piece can be moved or not in the specific cell.
+     *  A random value present between min and max.
      * @since 1.0
      * @version 1.0
      */
-    boolean isMoveable(ICell cell);
-
-    /**
-     * Move the piece on <em>cell</em>.
-     *
-     * @param cell
-     *  Arrival cell of the piece.
-     * @since 1.0
-     * @version 1.0
-     */
-    void move(ICell cell);
+    public static int random(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(max - min) + min;
+    }
 }

@@ -14,93 +14,92 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.model.piece;
+package fr.nicolasgille.chessmaster.model.player;
+
+import fr.nicolasgille.chessmaster.model.piece.IPiece;
+
+import java.util.List;
 
 /**
+ * An interface used to represent a <em>player</em> during a party of chess.
  *
  * @author Nicolas GILLE
  * @since Chess Master 0.1
  * @version 1.0
  */
-public interface IPiece {
+public interface IPlayer {
 
     /**
-     * Return the abscissa of the current piece.
+     * Get the name of the player.
      *
      * @return
-     *  The abscissa of the piece.
+     *  The name of the player.
      * @since 1.0
      * @version 1.0
      */
-    int getX();
+    String getName();
 
     /**
-     * Set the abscissa of the current piece.
+     * Set the name of the player.
+     *
+     * @param name
+     *  New name of the player.
+     * @since 1.0
+     * @version 1.0
+     */
+    void setName(String name);
+
+    /**
+     * Get all pieces of the player.
+     *
+     * @return
+     *  A list of all pieces of the player.
+     * @since 1.0
+     * @version 1.0
+     */
+    List<IPiece> getPieces();
+
+    /**
+     * Set all pieces of the player.
+     *
+     * @param pieces
+     *  New list if pieces.
+     * @since 1.0
+     * @version 1.0
+     */
+    void setPieces(List<IPiece> pieces);
+
+    /**
+     * Return the piece present on coordinates x,y.
      *
      * @param x
-     *  New abscissa of the piece.
-     * @since 1.0
-     * @version 1.0
-     */
-    void setX(int x);
-
-    /**
-     * Return the ordinate of the piece.
-     *
-     * @return
-     *  The ordinate of the piece.
-     * @since 1.0
-     * @version 1.0
-     */
-    int getY();
-
-    /**
-     * Set the ordinate of the current piece.
-     *
+     *  Abscissa of the piece to get.
      * @param y
-     *  New ordinate of the piece.
+     *  Ordinate of the piece to get.
+     * @return
+     *  The piece present on x,y.
      * @since 1.0
      * @version 1.0
      */
-    void setY(int y);
+    IPiece getPiece(int x, int y);
 
     /**
-     * Return the color of the piece.
+     * Get all pieces catch by the player.
      *
      * @return
-     *  The color of the piece.
+     *  Get all pieces catch and throw in jail by the player.
      * @since 1.0
      * @version 1.0
      */
-    PieceColor getColor();
+    List<IPiece> getJail();
 
     /**
-     * Set the color of the piece.
+     * Add a piece catch by player's piece on jail.
      *
-     * @param color
-     *  New color of the piece.
+     * @param piece
+     *  Piece catch by a player piece.
      * @since 1.0
      * @version 1.0
      */
-    void setColor(PieceColor color);
-
-    /**
-     * Return the symbol of the piece to represent it on terminal display.
-     *
-     * @return
-     *  The symbol of the piece for the terminal display.
-     * @since 1.0
-     * @version 1.0
-     */
-    char getSymbol();
-
-    /**
-     * Set the symbol used for represented on piece on terminal display.
-     *
-     * @param symbol
-     *  New symbol for the piece.
-     * @since 1.0
-     * @version 1.0
-     */
-    void setSymbol(char symbol);
+    void addPieceOnJail(IPiece piece);
 }

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board;
+package fr.nicolasgille.chessmaster.model.board;
 
 import org.junit.Test;
 
@@ -106,5 +106,11 @@ public class ChessBoardTest {
             assertThat(iae.getMessage()).isEqualTo(messageExpected);
             assertThat(iae.getMessage()).isEqualTo(messageExpected);
         }
+    }
+
+    @Test
+    public void testASCIIRepresentation() {
+        System.out.println(ChessBoard.getInstance().toString());
+        assertThat(true).isTrue();
     }
 }

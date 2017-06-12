@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.board.builder;
+package fr.nicolasgille.chessmaster.model.board.builder;
 
-import fr.nicolasgille.chessmaster.board.ChessBoard;
-import fr.nicolasgille.chessmaster.piece.PieceColor;
-import fr.nicolasgille.chessmaster.piece.chesspieces.*;
+import fr.nicolasgille.chessmaster.model.board.ChessBoard;
+import fr.nicolasgille.chessmaster.model.piece.PieceColor;
+import fr.nicolasgille.chessmaster.model.piece.chesspieces.*;
 
 /**
  * Build a chess board with all pieces.
@@ -51,9 +51,9 @@ public class ChessBoardBuilder {
      * @version 1.0
      */
     private void placePawn() {
-        for (int x = 0; x < ChessBoard.getInstance().getX(); ++x) {
-            ChessBoard.getInstance().getCell(x, 1).setPiece(new Pawn(x, 1, PieceColor.WHITE));
-            ChessBoard.getInstance().getCell(x, ChessBoard.getInstance().getY() - 2).setPiece(new Pawn(x, ChessBoard.getInstance().getY() - 2, PieceColor.BLACK));
+        for (int y = 0; y < ChessBoard.getInstance().getY(); ++y) {
+            ChessBoard.getInstance().getCell(1, y).setPiece(new Pawn(1, y, PieceColor.WHITE));
+            ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 2, y).setPiece(new Pawn(ChessBoard.getInstance().getY() - 2, y, PieceColor.BLACK));
         }
     }
 
@@ -66,9 +66,9 @@ public class ChessBoardBuilder {
     private void placeRook() {
         // White piece.
         ChessBoard.getInstance().getCell(0, 0).setPiece(new Rook(0, 0, PieceColor.WHITE));
-        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, 0).setPiece(new Rook(ChessBoard.getInstance().getX() - 1, 0, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 1).setPiece(new Rook(0, ChessBoard.getInstance().getX() - 1, PieceColor.WHITE));
         // Black piece.
-        ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getY() - 1).setPiece(new Rook(0, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 0).setPiece(new Rook(ChessBoard.getInstance().getY() - 1, 0, PieceColor.BLACK));
         ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 1).setPiece(new Rook(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
     }
 
@@ -80,11 +80,11 @@ public class ChessBoardBuilder {
      */
     private void placeKnight() {
         // White piece.
-        ChessBoard.getInstance().getCell(1, 0).setPiece(new Knight(1, 0, PieceColor.WHITE));
-        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 2, 0).setPiece(new Knight(ChessBoard.getInstance().getX() - 2, 0, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, 1).setPiece(new Knight(0, 1, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 2).setPiece(new Knight(0, ChessBoard.getInstance().getX() - 2, PieceColor.WHITE));
         // Black piece.
-        ChessBoard.getInstance().getCell(1, ChessBoard.getInstance().getY() - 1).setPiece(new Knight(1, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
-        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 2, ChessBoard.getInstance().getY() - 1).setPiece(new Knight(ChessBoard.getInstance().getX() - 2, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 1).setPiece(new Knight(ChessBoard.getInstance().getY() - 1, 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 2).setPiece(new Knight(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 2, PieceColor.BLACK));
     }
 
     /**
@@ -95,11 +95,11 @@ public class ChessBoardBuilder {
      */
     private void placeBishop() {
         // White piece.
-        ChessBoard.getInstance().getCell(2, 0).setPiece(new Bishop(2, 0, PieceColor.WHITE));
-        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 3, 0).setPiece(new Bishop(ChessBoard.getInstance().getX() - 23, 0, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, 2).setPiece(new Bishop(0, 2, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, ChessBoard.getInstance().getX() - 3).setPiece(new Bishop(0,ChessBoard.getInstance().getX() - 3, PieceColor.WHITE));
         // Black piece.
-        ChessBoard.getInstance().getCell(2, ChessBoard.getInstance().getY() - 1).setPiece(new Bishop(2, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
-        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 3, ChessBoard.getInstance().getY() - 1).setPiece(new Bishop(ChessBoard.getInstance().getX() - 3, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 2).setPiece(new Bishop(ChessBoard.getInstance().getY() - 1, 2, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 3).setPiece(new Bishop(ChessBoard.getInstance().getX() - 1, ChessBoard.getInstance().getY() - 3, PieceColor.BLACK));
     }
 
     /**
@@ -110,9 +110,9 @@ public class ChessBoardBuilder {
      */
     private void placeQueen() {
         // White piece.
-        ChessBoard.getInstance().getCell(3, 0).setPiece(new Queen(3, 0, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, 3).setPiece(new Queen(0, 3, PieceColor.WHITE));
         // Black piece.
-        ChessBoard.getInstance().getCell(3, ChessBoard.getInstance().getY() - 1).setPiece(new Queen(3, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 3).setPiece(new Queen(ChessBoard.getInstance().getY() - 1,3 , PieceColor.BLACK));
     }
 
     /**
@@ -123,8 +123,8 @@ public class ChessBoardBuilder {
      */
     private void placeKing() {
         // White piece.
-        ChessBoard.getInstance().getCell(4, 0).setPiece(new King(4, 0, PieceColor.WHITE));
+        ChessBoard.getInstance().getCell(0, 4).setPiece(new King(0, 4,  PieceColor.WHITE));
         // Black piece.
-        ChessBoard.getInstance().getCell(4, ChessBoard.getInstance().getY() - 1).setPiece(new King(4, ChessBoard.getInstance().getY() - 1, PieceColor.BLACK));
+        ChessBoard.getInstance().getCell(ChessBoard.getInstance().getY() - 1, 4).setPiece(new King(ChessBoard.getInstance().getY() - 1, 4, PieceColor.BLACK));
     }
 }

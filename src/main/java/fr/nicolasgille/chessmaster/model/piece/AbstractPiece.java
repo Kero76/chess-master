@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.piece;
+package fr.nicolasgille.chessmaster.model.piece;
 
-import fr.nicolasgille.chessmaster.board.ICell;
+import fr.nicolasgille.chessmaster.model.board.ICell;
 
 /**
  * Abstract class used to implements same methods from each subclass of piece.
@@ -50,6 +50,13 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
      * @since 1.0
      */
     protected PieceColor color;
+
+    /**
+     * Symbol used to represent the piece.
+     *
+     * @since 1.0
+     */
+    protected char symbol;
 
     /**
      * Return the abscissa of the current piece.
@@ -125,6 +132,32 @@ public abstract class AbstractPiece implements IPiece, Catchable, Moveable {
      */
     public void setColor(PieceColor color) {
         this.color = color;
+    }
+
+    /**
+     * Return the symbol of the piece to represent it on terminal display.
+     *
+     * @return The symbol of the piece for the terminal display.
+     *
+     * @version 1.0
+     * @since 1.0
+     */
+    @Override
+    public char getSymbol() {
+        return this.symbol;
+    }
+
+    /**
+     * Set the symbol used for represented on piece on terminal display.
+     *
+     * @param symbol New symbol for the piece.
+     *
+     * @version 1.0
+     * @since 1.0
+     */
+    @Override
+    public void setSymbol(char symbol) {
+        this.symbol = symbol;
     }
 
     /**

@@ -2,25 +2,18 @@
 
 Chess Master is a chess game write in Java.
 
-The goal of these project is to develop a Chess game to played in single or two players.
+It consist in compilation about some different mini-games around the theme of Chess. 
 
-## Rules of the Chess
+## Chess 
 You can get the rules of the Chess directly on Wikipedia :
 [Rules](https://en.wikipedia.org/wiki/Rules_of_chess "Chess Rules")
 
-## Features Improve
-- [ ] Create the game engine to played a party of Chess.
-- [ ] Develop an graphical interface for the game.
-- [ ] Develop an AI with 3 skills levels.
-
-### Pieces of Chess 
-You can see the pieces ready to play.
-- [x] Pawn
-- [x] Rook
-- [x] Bishop
-- [x] Knight
-- [x] Queen
-- [x] King
+## Ride 2 the End
+### Goal
+The goal of this game is to move a Knight on a maximum cells present on a chessboard.
+During the party, two players (human vs human or human vs AI) moved turn by turn a Knight in the chessboard.
+The winner of the party is the player who moved the Knight in a maximum cells before block the knight.
+In fact, a knight can't go on cell where it passed before and can be block by the other knight, because if the cell is occupied by the other knight, your knight can't go on the cell.
 
 ## License
 Chess Master is under GPLv3 license.

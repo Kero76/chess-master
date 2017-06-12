@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with Chess Master. If not, see <http://www.gnu.org/licenses/>.
  */
-package fr.nicolasgille.chessmaster.piece.chesspieces;
+package fr.nicolasgille.chessmaster.model.piece.chesspieces;
 
-import fr.nicolasgille.chessmaster.board.Cell;
-import fr.nicolasgille.chessmaster.board.ChessBoard;
-import fr.nicolasgille.chessmaster.piece.PieceColor;
+import fr.nicolasgille.chessmaster.model.board.Cell;
+import fr.nicolasgille.chessmaster.model.board.ChessBoard;
+import fr.nicolasgille.chessmaster.model.piece.PieceColor;
 import org.junit.Before;
 import org.junit.Test;
 
